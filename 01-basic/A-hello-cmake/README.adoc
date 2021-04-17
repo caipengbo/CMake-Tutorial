@@ -72,7 +72,7 @@ as follows,
 [source,cmake]
 ----
 cmake_minimum_required(VERSION 2.6)
-project (hello_cmake)
+project(hello_cmake)
 add_executable(${PROJECT_NAME} main.cpp)
 ----
 
@@ -92,6 +92,7 @@ out-of-source.
 
 #### In-Place Build
 
+在当前文件夹下生成cmake输出的文件
 In-place builds generate all temporary build files in the same directory structure
 as the source code. This means that all Makefiles and object files are interspersed
 with your normal code. To create an in-place build target run the cmake command
@@ -155,6 +156,7 @@ A-hello-cmake$ tree
 
 #### Out-of-Source Build
 
+在指定的目录下生成cmake输出的文件
 Out-of-source builds allow you to create a single build folder that can be anywhere on
 your file system. All temporary build and object files are located in this directory keeping
 your source tree clean. To create an out-of-source build run the cmake command in
