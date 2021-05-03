@@ -7,11 +7,11 @@ project(hello_library)
 ############################################################
 
 #Generate the static library from the library sources
-add_library(hello_library STATIC 
+add_library(hello_library_lib STATIC 
     src/Hello.cpp
 )
-
-target_include_directories(hello_library
+# 注意此处仅到include目录，所以引用的时候需要使用static/Hello.h
+target_include_directories(hello_library_lib
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
 )
@@ -27,7 +27,7 @@ add_executable(hello_binary
 )
 
 # link the new hello_library target with the hello_binary target
-target_link_libraries( hello_binary
+target_link_libraries(hello_binary
     PRIVATE 
-        hello_library
+        hello_library_lib
 )
